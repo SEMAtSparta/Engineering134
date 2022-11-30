@@ -1,3 +1,0 @@
-pig latin
-latin pig
-latin.
