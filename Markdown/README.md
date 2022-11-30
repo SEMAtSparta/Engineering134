@@ -28,8 +28,8 @@ _italics all the **way**_
 1. three
 
 ## Do not talk to me or my son ever again
-![pancho villa](./images/villa.jpg)
-<img src="./images/villa.jpg" width="20%" height="20%"/>
+![pancho villa](./Images/villa.jpg)
+<img src="./Images/villa.jpg" width="20%" height="20%"/>
 
 ## Links
 [Markdown Cheatsheet](https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf)
@@ -47,5 +47,5 @@ incredible
 - [x] Done.
 
 please | help | 
-|
+---|
 i will|try|my|best
