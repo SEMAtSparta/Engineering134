@@ -1,0 +1,1 @@
+﻿Get-Command -CommandType Cmdlet *date* > Powershell-Date-Commands.txt
