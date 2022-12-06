@@ -27,6 +27,7 @@ namespace OperatorsApp
             var mod = 5 % 2;    //assigns mod = 1;
 
             LbsToStone(152);
+            MysteryCode();
         }
 
         bool IsEven(int x)
@@ -41,13 +42,16 @@ namespace OperatorsApp
             Console.WriteLine(x + "lbs is " + stone + " stone and " + remainder  + " ounces.");
         }
 
-        /*static void MysteryCode()
+        static void MysteryCode()
         {
             int j = 5, k = 3, m = 4;
 
-            m += +j;
-        }*/
+            m += +j++ + ++k;
+            //m = 13
+            //+j++: the prefix + appears to do nothing at all. This value is added before increment
+            //+ ++k: this value is added after increment
+        }
 
-        
-      }
+
+    }
 }
