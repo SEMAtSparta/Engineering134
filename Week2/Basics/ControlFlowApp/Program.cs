@@ -9,7 +9,7 @@ namespace ControlFlowApp
             /*int mark = 35;
             var grade = mark >= 65 ? (mark >= 85 ? "Distinction" : "Pass") : "Fail"; //? operator performs an inline if statement where: bool ? ifTrue : ifFalse;*/
 
-            List<int> nums = new List<int> { 10, 6, 22, -17, 3 };
+            List<int> nums = new List<int> { 22, 6,  -17, 3, 10 };
 
             Console.WriteLine("Highest for- loop: " + LoopTypes.HighestForLoop(nums));
 
