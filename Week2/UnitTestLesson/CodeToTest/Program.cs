@@ -5,7 +5,7 @@ internal class Program
     static void Main(string[] args)
     {
         int timeOfDay = 21;
-        GetGreeting(timeOfDay);
+        Console.WriteLine(GetGreeting(timeOfDay));
     }
 
     private static string GetGreeting(int timeOfDay)
