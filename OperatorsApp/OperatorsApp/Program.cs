@@ -28,6 +28,9 @@ namespace OperatorsApp
 
             LbsToStone(152);
             MysteryCode();
+
+            int z = 5;
+            Console.WriteLine(z++ + z);
         }
 
         bool IsEven(int x)
