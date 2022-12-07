@@ -1,5 +1,7 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestPlatform.TestHost;
+using NUnit.Framework;
 using Op_CtrlFlow;
+using System;
 using System.Collections.Generic;
 
 namespace Op_CtrlFlow_Tests
@@ -7,14 +9,28 @@ namespace Op_CtrlFlow_Tests
     public class Exercises_Tests
     {
 
-        [Test]
-        public void MyMethodTests()
+        [TestCase(4,1,true)]
+        [TestCase(1, 1, false)]
+        [TestCase(27, 3, true)]
+        [TestCase(-27, 3, true)]
+        [TestCase(7, 21, false)]
+            
+        public void MyMethod_ReturnsValid(int x, int y, bool b)
         {
-            Assert.That(Exercises.MyMethod(4, 1), Is.EqualTo(true));
-            Assert.That(Exercises.MyMethod(1, 1), Is.EqualTo(false));
-            Assert.That(Exercises.MyMethod(-27, 3), Is.EqualTo(true));
-            Assert.That(Exercises.MyMethod(27, -3), Is.EqualTo(true));
-            Assert.That(Exercises.MyMethod(7, 21), Is.EqualTo(false));
+            bool result = Exercises.MyMethod(x, y);
+            Assert.That(result, Is.EqualTo(b));
+        }
+
+        [Test]
+        public void MyMethod_ThrowsDivideByZero() 
+        {
+            Assert.That(() => Exercises.MyMethod(1, 0), Throws.TypeOf<DivideByZeroException>());
+        }
+
+        [Test]
+        public void WhenMyMethod_FirstArgIs0_ThrowsArgumentOutOfRange()
+        {
+            Assert.That(() => Exercises.MyMethod(0,1), Throws.TypeOf<ArgumentOutOfRangeException>());
         }
 
         [Test]
@@ -45,6 +61,12 @@ namespace Op_CtrlFlow_Tests
         {
             var result = Exercises.TicketType(age);
             Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void WhenTicketType_AgeLessThan0_ThrowsArgumentOutOfRange()
+        {
+            Assert.That(() => Exercises.TicketType(-1), Throws.TypeOf<ArgumentOutOfRangeException>());
         }
     }
 }

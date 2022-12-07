@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
@@ -8,6 +9,8 @@ namespace Op_CtrlFlow
     {
         public static bool MyMethod(int num1, int num2)
         {
+            if (num2 == 0) throw new DivideByZeroException("Cannot divide by zero.");
+            if (num1 == 0) throw new ArgumentOutOfRangeException("First parameter cannot be zero.");
             return num1 == num2 ? false : (num1 % num2) == 0;
             //returns false if num1 == num2 or num1 is not a multiple of num2.
             //returns true only if num1 is a non-identical multiple of num2
@@ -58,8 +61,7 @@ namespace Op_CtrlFlow
                     ticketType = "Free";
                     break;
                 default:
-                    System.Console.WriteLine("Negative age is not permitted or possible.");
-                    break;
+                    throw new ArgumentOutOfRangeException("Negative age is not permitted, or possible.");
             }
             return ticketType;
         }
@@ -107,8 +109,7 @@ namespace Op_CtrlFlow
                 case 4:
                     return 20;
                 default:
-                    System.Console.WriteLine("Negative covid level not permitted.");
-                    return -1;
+                    throw new ArgumentOutOfRangeException("Covid level must be in the range 0-4.");
             }
         }
     }
