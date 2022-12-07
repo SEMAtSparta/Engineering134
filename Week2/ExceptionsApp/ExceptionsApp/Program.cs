@@ -1,10 +1,19 @@
-﻿namespace ExceptionsApp
+﻿using System.IO;
+
+namespace ExceptionsApp;
+
+public class Program
 {
-    internal class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        string textFile;
+        try 
         {
-            Console.WriteLine("Hello, World!");
+            textFile = File.ReadAllText("SuperSecretDiary.txt");
+        }
+        catch
+        {
+            Console.WriteLine("Sorry, I can't find the file :(");
         }
     }
 }
