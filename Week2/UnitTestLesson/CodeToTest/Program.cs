@@ -12,7 +12,7 @@ public class Program
     {
         string message;
 
-        if (timeOfDay >= 5 && timeOfDay <= 12)
+        if (timeOfDay >= 5 && timeOfDay < 12)
         {
             message = "Good morning!";
         }

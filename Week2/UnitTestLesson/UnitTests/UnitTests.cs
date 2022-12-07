@@ -3,6 +3,13 @@ namespace UnitTests;
 
 public class Tests
 {
+    [Test]
+    public void GivenTimeOf4_GetGreeting_ReturnsGoodEvening()
+    {
+        int time = 4;
+        string output = Program.GetGreeting(time);
+        Assert.That(output, Is.EqualTo("Good evening!"));
+    }
 
     [Test]
     public void GivenTimeOf21_GetGreeting_ReturnsGoodEvening()
@@ -34,5 +41,15 @@ public class Tests
         int time = 14;
         string output = Program.GetGreeting(time);
         Assert.That(output, Is.EqualTo("Good afternoon!"));
+    }
+
+    [TestCase(5)]
+    [TestCase(11)]
+
+    public void GivenMorningBoundaryValues_GetGreeting_ReturnsGoodMorning(int timeOfDay)
+    {
+        int time = timeOfDay;
+        string output = Program.GetGreeting(time);
+        Assert.That(output, Is.EqualTo("Good morning!"));
     }
 }
