@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace Op_CtrlFlow
@@ -10,16 +11,17 @@ namespace Op_CtrlFlow
             return num1 == num2 ? false : (num1 % num2) == 0;
             //returns false if num1 == num2 or num1 is not a multiple of num2.
             //returns true only if num1 is a non-identical multiple of num2
-            //Assert.That(Exercises.MyMethod(4,1), Is.EqualTo(True))
-            //Assert.That(Exercises.MyMethod(1,1), Is.EqualTo(False))
-            //Assert.That(Exercises.MyMethod(-27,3), Is.EqualTo(True))
-            //Assert.That(Exercises.MyMethod(27,-3), Is.EqualTo(True))
-            //Assert.That(Exercises.MyMethod(7,21), Is.EqualTo(False))
+            
         }
 
         // returns the average of the array nums
         public static double Average(List<int> nums)
         {
+            if (!nums.Any())
+            {
+                return 0;
+            }
+
             double total = 0;
 
             for(int i = 0; i < nums.Count; ++i)
@@ -53,7 +55,7 @@ namespace Op_CtrlFlow
                     ticketType = "Child";
                     break;
                 case >= 0:
-                    ticketType = "Child";
+                    ticketType = "Free";
                     break;
                 default:
                     System.Console.WriteLine("Negative age is not permitted or possible.");

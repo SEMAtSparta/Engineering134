@@ -5,9 +5,17 @@ using System.Collections.Generic;
 namespace Op_CtrlFlow_Tests
 {
     public class Exercises_Tests
-    {     
-        // write unit test(s) for MyMethod here
+    {
 
+        [Test]
+        public void MyMethodTests()
+        {
+            Assert.That(Exercises.MyMethod(4, 1), Is.EqualTo(true));
+            Assert.That(Exercises.MyMethod(1, 1), Is.EqualTo(false));
+            Assert.That(Exercises.MyMethod(-27, 3), Is.EqualTo(true));
+            Assert.That(Exercises.MyMethod(27, -3), Is.EqualTo(true));
+            Assert.That(Exercises.MyMethod(7, 21), Is.EqualTo(false));
+        }
 
         [Test]
         public void Average_ReturnsCorrectAverage()

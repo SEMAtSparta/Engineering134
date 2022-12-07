@@ -1,6 +1,6 @@
 ﻿namespace CodeToTest;
 
-internal class Program
+public class Program
 {
     static void Main(string[] args)
     {
@@ -8,7 +8,7 @@ internal class Program
         Console.WriteLine(GetGreeting(timeOfDay));
     }
 
-    private static string GetGreeting(int timeOfDay)
+    public static string GetGreeting(int timeOfDay)
     {
         string message;
 
