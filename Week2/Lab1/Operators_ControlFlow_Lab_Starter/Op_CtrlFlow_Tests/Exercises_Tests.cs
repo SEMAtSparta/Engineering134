@@ -68,5 +68,31 @@ namespace Op_CtrlFlow_Tests
         {
             Assert.That(() => Exercises.TicketType(-1), Throws.TypeOf<ArgumentOutOfRangeException>());
         }
+
+        [TestCase(0, "Fail.")]
+        [TestCase(15, "Fail.")]
+        [TestCase(39, "Fail.")]
+        [TestCase(40, "Pass.")]
+        [TestCase(50, "Pass.")]
+        [TestCase(59, "Pass.")]
+        [TestCase(60, "Pass with Merit.")]
+        [TestCase(70, "Pass with Merit.")]
+        [TestCase(74, "Pass with Merit.")]
+        [TestCase(75, "Pass with Distinction.")]
+        [TestCase(85, "Pass with Distinction.")]
+        [TestCase(100, "Pass with Distinction.")]
+
+        public void Grade_RangeTest(int mark, string expected)
+        {
+            var result = Exercises.Grade(mark);
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void WhenGrade_MarkLessThan0_ThrowsArgumentOutOfRange()
+        {
+            Assert.That(() => Exercises.Grade(-1), Throws.TypeOf<ArgumentOutOfRangeException>());
+        }
+
     }
 }

@@ -70,27 +70,35 @@ namespace Op_CtrlFlow
         {
             var grade = "";
 
-            if(100 >= mark && mark > 74)
+            if(mark >= 0)
             {
-                grade = "Pass with Distinction";
-            }
-            else if(75 > mark && mark > 59)
-            {
-                grade = "Pass with Merit";
-            }
-            else if(60 > mark && mark > 39)
-            {
-                grade = "Pass";
-            }
-            else if(40 > mark && mark >= 0)
-            {
-                grade = "Fail";
+                if(mark >= 40)
+                {
+                    if(mark >= 60)
+                    {
+                        if(mark >= 75)
+                        {
+                            grade = "Pass with Distinction.";
+                        }
+                        else
+                        {
+                            grade = "Pass with Merit.";
+                        }
+                    }
+                    else
+                    {
+                        grade = "Pass.";
+                    }
+                }
+                else
+                {
+                    grade = "Fail.";
+                }
             }
             else
             {
-                grade = "Negative marks not permitted.";
+                throw new ArgumentOutOfRangeException("Grade cannot be negative.");
             }
-
             return grade;
         }
 
