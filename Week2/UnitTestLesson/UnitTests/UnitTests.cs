@@ -3,14 +3,46 @@ namespace UnitTests;
 
 public class Tests
 {
-    [Test]
-    public void GivenTimeOf4_GetGreeting_ReturnsGoodEvening()
+    
+
+    [TestCase(5)]
+    [TestCase(6)]
+    [TestCase(11)]
+
+    public void GivenMorningBoundaryValues_GetGreeting_ReturnsGoodMorning(int timeOfDay)
     {
-        int time = 4;
+        int time = timeOfDay;
+        string output = Program.GetGreeting(time);
+        Assert.That(output, Is.EqualTo("Good morning!"));
+    }
+
+    [TestCase(12)]
+    [TestCase(14)]
+    [TestCase(18)]
+
+    public void GivenAfternoonBoundaryValues_GetGreeting_ReturnsGoodAfternoon(int timeOfDay)
+    {
+        int time = timeOfDay;
+        string output = Program.GetGreeting(time);
+        Assert.That(output, Is.EqualTo("Good afternoon!"));
+    }
+
+    [TestCase(0)]
+    [TestCase(2)]
+    [TestCase(4)]
+    [TestCase(19)]
+    [TestCase(21)]
+    [TestCase(23)]
+
+    public void GivenEveningBoundaryValues_GetGreeting_ReturnsGoodEvening(int timeOfDay)
+    {
+        int time = timeOfDay;
         string output = Program.GetGreeting(time);
         Assert.That(output, Is.EqualTo("Good evening!"));
     }
 
+
+    /*Specimen Test
     [Test]
     public void GivenTimeOf21_GetGreeting_ReturnsGoodEvening()
     {
@@ -25,31 +57,5 @@ public class Tests
         //then
         //A.ssert that it returned "Good evening!"
         Assert.That(output, Is.EqualTo("Good evening!"));
-    }
-
-    [Test]
-    public void GivenTimeOf11_GetGreeting_ReturnsGoodMorning()
-    {
-        int time = 11;
-        string output = Program.GetGreeting(time);
-        Assert.That(output, Is.EqualTo("Good morning!"));
-    }
-
-    [Test]
-    public void GivenTimeOf14_GetGreeting_ReturnsGoodAfternoon()
-    {
-        int time = 14;
-        string output = Program.GetGreeting(time);
-        Assert.That(output, Is.EqualTo("Good afternoon!"));
-    }
-
-    [TestCase(5)]
-    [TestCase(11)]
-
-    public void GivenMorningBoundaryValues_GetGreeting_ReturnsGoodMorning(int timeOfDay)
-    {
-        int time = timeOfDay;
-        string output = Program.GetGreeting(time);
-        Assert.That(output, Is.EqualTo("Good morning!"));
-    }
+    }*/
 }
