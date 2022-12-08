@@ -8,7 +8,14 @@ namespace MoreDataTypesApp
         {
             var myString = " C# list fundamentals";
             //Console.WriteLine(StringExercise(myString));
-            Console.WriteLine(StringBuilderExercise(myString));
+            //Console.WriteLine(StringBuilderExercise(myString));
+            //Console.WriteLine("1." + "2." + "3." + "4." + "5." + "6." + "7." + "8." + "9." + 
+            //    "10." + "11." + "12." + "13." + "14." + "15." + "16." + "17." + "18." + "19." +
+            //    "20." + "21." + "22." + "23." + "24." + "25." + "26." + "27." + "28." + "29." +
+            //    "30." + "31." + "32." + "33." + "34." + "35." + "36." + "37." + "38." + "39." + 
+            //    "40." + "41.");
+            StringInterpolation("Scot");
+
         }
 
         public static string StringExercise(string myString)
@@ -46,6 +53,28 @@ namespace MoreDataTypesApp
             StringBuilder sb = new StringBuilder(trimmedUpperString);
             sb.Replace('L', '*').Replace('T', '*').Remove(nPos + 1, sb.Length - nPos - 1);
             return sb.ToString();
+        }
+
+        public static void StringInterpolation(string str)
+        {
+            Console.WriteLine("My name is :" + str + " Using +");
+            Console.WriteLine($"My name is :{str} using interpolation");
+
+            int num1 = 14;
+            int num2 = 7;
+
+
+            Console.WriteLine($"{num1} to the power of {num2} is {Math.Pow(num1, num2)}");
+            Console.WriteLine($"Log to base {num2} of {num1} is {Math.Log(num2,num1):0.####}");
+            Console.WriteLine($"That will be {num2/3.0:C} please");
+        }
+
+        public static void ParsingStrings()
+        {
+            Console.WriteLine("How many apples?");
+            string input = Console.ReadLine();
+            //int numApples = Int32.Parse(input);
+            var success = Int32.TryParse(input, out int parsedApples);
         }
     }
 }
