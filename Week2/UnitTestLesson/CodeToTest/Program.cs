@@ -11,6 +11,10 @@ public class Program
     public static string GetGreeting(int timeOfDay)
     {
         string message;
+        if(timeOfDay > 23 || timeOfDay < 0)
+        {
+            throw new ArgumentOutOfRangeException("Time of day cannot be negative.");
+        }
 
         if (timeOfDay >= 5 && timeOfDay < 12)
         {
@@ -30,8 +34,16 @@ public class Program
 
     public static string AvailableClassifications(int ageOfViewer)
     {
+        if(ageOfViewer < 0)
+        {
+            throw new ArgumentOutOfRangeException("Age of viewer cannot be negative.");
+        }
         string result;
-        if (ageOfViewer < 12)
+        if(ageOfViewer < 4)
+        {
+            result = "No films are available.";
+        }
+        else if (ageOfViewer < 12)
         {
             result = "U & PG films are available.";
         }

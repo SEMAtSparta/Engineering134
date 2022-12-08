@@ -94,5 +94,14 @@ namespace Op_CtrlFlow_Tests
             Assert.That(() => Exercises.Grade(-1), Throws.TypeOf<ArgumentOutOfRangeException>());
         }
 
+        [TestCase(5)]
+        [TestCase(-1)]
+
+        public void GivenOutOfRange_ScottishWedding_ThrowsOutOfRange(int covidLevel)
+        {
+            int level = covidLevel;
+            Assert.That(() => Exercises.GetScottishMaxWeddingNumbers(level), Throws.TypeOf<ArgumentOutOfRangeException>());
+        }
+
     }
 }

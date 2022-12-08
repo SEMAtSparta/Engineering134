@@ -40,6 +40,10 @@ namespace OperatorsApp
 
         static void LbsToStone(int x)
         {
+            if(x < 0)
+            {
+                throw new ArgumentOutOfRangeException("Argument to LbsToStone must not be negative.");
+            }
             int stone = x / 14;
             int remainder = x % 14;
             Console.WriteLine(x + "lbs is " + stone + " stone and " + remainder  + " ounces.");
