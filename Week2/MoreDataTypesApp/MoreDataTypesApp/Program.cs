@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace MoreDataTypesApp;
@@ -10,8 +11,9 @@ internal class Program
         var myString = " C# list fundamentals";
 
         //StringInterpolation("Scot");
-        OneDArrays();
-
+        //OneDArrays();
+        //MultiDArrays();
+        JaggedArrays();
     }
     #region Strings
 
@@ -93,5 +95,54 @@ internal class Program
         grid[0, 1] = 6;
         grid[1, 0] = 8;
         grid[1, 3] = 10;
+
+        char[,] gridTwo =
+        {
+            { 'a', 'b'
+            },
+            { 'c', 'd'
+            },
+            { 'e', 'f'
+            },
+            { 'g', 'h'
+            },
+            { 'i', 'j'
+            }
+        };
+
+        //prints the whole array
+        //Console.WriteLine("All of gridTwo:");
+        //foreach (int element in gridTwo)
+        //{
+        //    Console.WriteLine(element);
+        //}
+
+        Console.WriteLine("GridTwo row by row:");
+        for(int i = gridTwo.GetLowerBound(0); i <= gridTwo.GetUpperBound(0); i++)
+        {
+            for (int j = gridTwo.GetLowerBound(1); j <= gridTwo.GetUpperBound(1); j++)
+            {
+                Console.WriteLine($"({i},{j}) {gridTwo[i,j]}");
+            }
+        }
+
+        
+        
     }
+    public static void JaggedArrays()
+    {
+        int[][] intJArray = new int[2][];
+        intJArray[0] = new int[4];
+        intJArray[1] = new int[2];
+
+        intJArray[0][2] = 3;
+        intJArray[1][0] = 5;
+
+        string[][] animalJArray = new string[][]
+        {
+            new string[]{"Hyena", "Lion", "Cheetah", "Panda"},
+            new string[]{"Peacock", "Canary"}
+        };
+    }
+
 }
