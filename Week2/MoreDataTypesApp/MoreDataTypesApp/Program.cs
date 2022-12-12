@@ -11,9 +11,13 @@ internal class Program
         var myString = " C# list fundamentals";
 
         //StringInterpolation("Scot");
+
         //OneDArrays();
         //MultiDArrays();
-        JaggedArrays();
+        //JaggedArrays();
+
+        DateTimeMethods();
+        Enums();
     }
     #region Strings
 
@@ -78,6 +82,7 @@ internal class Program
     //}
 
     #endregion
+    #region Arrays
 
     public static void OneDArrays()
     {
@@ -144,5 +149,46 @@ internal class Program
             new string[]{"Peacock", "Canary"}
         };
     }
+    #endregion
+    #region Date/Time and Enums
+    public static void DateTimeMethods()
+    {
+        var original = DateTime.Now;
+        var now = DateTime.Now;
+        var tomorrow = now.AddDays(1);
+        Console.WriteLine($"The time is now {now}");
+        Console.WriteLine($"The time in ticks is now {now.Ticks}");
 
+        Console.WriteLine($"Tomorrow it will be {tomorrow}");
+        Console.WriteLine($"The amount of time it took to run this function is {(DateTime.Now.Ticks - original.Ticks)/10000}ms");
+    }
+
+    public static void Enums()
+    {
+        Suit theSuit = Suit.HEARTS;
+        if(theSuit == Suit.SPADES)
+        {
+            Console.WriteLine($"Suit is {Suit.SPADES}");
+        }
+        else
+        {
+            Console.WriteLine($"Suit is {theSuit} not {Suit.SPADES}");
+        }
+
+        var anotherSuit = Enum.Parse(typeof(Suit), "CLUBS");
+
+        var mediumValue = (int)Size.MEDIUM;
+        var mySize = (Size)50;
+    }
+
+    #endregion
+}
+public enum Suit
+{
+    HEARTS, CLUBS, DIAMONDS, SPADES
+}
+
+public enum Size
+{
+    SMALL = 10, LARGE = 50, MEDIUM = 25
 }

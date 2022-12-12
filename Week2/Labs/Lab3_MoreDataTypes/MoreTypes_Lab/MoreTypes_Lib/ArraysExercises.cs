@@ -38,7 +38,7 @@ public class ArraysExercises
                 for (int z = 0; z < length3; z++)
                 {
                     output[x, y, z] = contents[index];
-                    index
+                    index++;
                 }
             }
         }

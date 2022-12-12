@@ -4,8 +4,8 @@ public class Program
 {
     static void Main(string[] args)
     {
-        int timeOfDay = 21;
-        Console.WriteLine(GetGreeting(timeOfDay));
+        //int timeOfDay = 21;
+        //Console.WriteLine(GetGreeting(timeOfDay));
     }
 
     public static string GetGreeting(int timeOfDay)

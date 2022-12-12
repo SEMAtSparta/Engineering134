@@ -10,12 +10,14 @@ namespace TestFirstExercises_Tests
         [TestCase(1, 0)]
         [TestCase(9, 25)]
         [TestCase(10, 35)]
-        [TestCase(22, 152 )]
+        [TestCase(22, 152)]
+
         public void SumEvenFive_ReturnsExpectedResult(int n, int expectedSum)
         {
             var result = Methods.SumEvenFive(n);
             Assert.That(result, Is.EqualTo(expectedSum));
         }
+
         [Test]
         public void GivenAParameterOfZero_SumEvenFive_ReturnsZero()
         {
@@ -28,6 +30,12 @@ namespace TestFirstExercises_Tests
         {
             var result = Methods.SumEvenFive(-3);
             Assert.That(result, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void GivenLargeNumber_SumEvenFive_ThrowsOverflowException()
+        {
+            Assert.That(() => Methods.SumEvenFive(int.MaxValue), Throws.TypeOf<OverflowException>());
         }
     }
 }

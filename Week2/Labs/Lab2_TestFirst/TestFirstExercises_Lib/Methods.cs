@@ -8,7 +8,7 @@ namespace TestFirstExercises
         // implement this method so that it returns true if x is greater than or equal to y
         public static bool GreaterEqual(int x, int y)
         {
-            return false;
+            return x >= y;
         }
 
         // Implement this method so that it take an int as an input,
@@ -16,13 +16,17 @@ namespace TestFirstExercises
         // Return a double rounded to 3 decimal places.
         public static double BODMAS(int inputNumber)
         {
-            return 0;
+            double total = 0;
+            total = ((inputNumber * inputNumber) + 101) / 7f - 4;
+            
+            
+            return Math.Round(total, 3);
         }
 
         // implement this method so that it returns true if num is even, otherwise false
         public static bool EvenOdd(int num)
         {
-            return false;
+            return (num % 2) == 0;
         }
 
         // implement this method so that it returns 
@@ -30,21 +34,42 @@ namespace TestFirstExercises
         // that are divisible by either 2 or 5
         public static int SumEvenFive(int max)
         {
-            return -1;
+            int total = 0;
+            for(int i = 0; i <= max; i++)
+            {
+                if((i % 2 == 0)||(i % 5 == 0))
+                {
+                    try
+                    {
+                        total += i;
+                    }
+                    catch(OverflowException e)
+                    {
+                        throw (e);
+                    }
+                }
+            }
+            return total;
         }
 
         // implement this method so it returns true if input is "password"
         // regardless of case
         public static bool CheckInput(string input)
         {
-            return false;
+            string inputLower = input.ToLower();
+            return inputLower == "password";
         }
 
         // implement this method so it returns the sum
         // of all the numbers in the list
         public static int SumList(List<int> list)
         {
-            return -1;
+            int total = 0;
+            foreach(int num in list)
+            {
+                total += num;
+            }
+            return total;
         }
     }
 }

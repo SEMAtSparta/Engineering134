@@ -24,7 +24,7 @@ internal class Program
             sum += 1 / 7f;
         }
 
-        if(700_000 * (1/7f) == 100_000)
+        if(700_000 * (1/7f) == 100_000f)
         {
             Console.WriteLine("700,000 is divisible by 7!");
         }
