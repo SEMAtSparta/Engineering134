@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Runtime.CompilerServices;
 
 namespace MoreTypes_Lib
 {
@@ -27,7 +28,7 @@ namespace MoreTypes_Lib
         // returns a date formatted in the manner specified by the unit test
         public static string FormatDate(DateTime date)
         {
-            return $"{date.Year}/{date.Day}/{date.Month}###";
+            return date.ToString("y/dd/MMM");
         }
 
         // returns the name of the month corresponding to a given date
