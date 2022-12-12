@@ -12,19 +12,22 @@ namespace Methods_Tests
             for(int i = 0; i< 30; i++)
             {
                 int result = Methods.RollDice(new Random());
-                Assert.That(result, Is.LessThanOrEqualTo(12));
-                Assert.That(result, Is.GreaterThanOrEqualTo(2));
+                Assert.That(result, Is.InRange(2,12));
             }            
         }
 
-        [TestCase(1111, 6)]
-        [TestCase(2222, 9)]
-        [TestCase(9999, 8)]
+        [TestCase(1111)]
+        [TestCase(2222)]
+        [TestCase(9999)]
 
-        public void GivenKnownSeed_RollDice_ReturnsCorrectValues(int seed, int expectedOutput)
+        public void GivenKnownSeed_RollDice_ReturnsCorrectValues(int seed)
         {
-            int result = Methods.RollDice(new Random(seed));
-            Assert.That(result, Is.EqualTo(expectedOutput));
+            Random rnd = new Random(seed);
+            int value1 = rnd.Next(1,7);
+            int value2 = rnd.Next(1,7);
+            int result = value1 + value2;
+            int methodOutput = Methods.RollDice(new Random(seed));
+            Assert.That(methodOutput, Is.EqualTo(result));
         }
 
     }

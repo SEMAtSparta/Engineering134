@@ -30,9 +30,7 @@ namespace Methods_Tests
         public void GivenANumber_PowersRoot_ReturnsCorrectOutput(int input, int square, int cube, double sqrt)
         {
             var output = Methods.PowersRoot(input);
-            Assert.That(output.square, Is.EqualTo(square));
-            Assert.That(output.cube, Is.EqualTo(cube));
-            Assert.That(output.sqrt, Is.EqualTo(sqrt));
+            Assert.That(output, Is.EqualTo((square,cube,sqrt)));
         }
 
         [Test]
