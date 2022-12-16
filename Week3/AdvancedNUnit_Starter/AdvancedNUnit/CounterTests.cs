@@ -32,10 +32,10 @@ namespace AdvancedNUnit
             Assert.That(_sut.Count, Is.EqualTo(5));
         }
 
-        //[TestCaseSource("AddCases")]
-        //private static object[] AddCases = {
-        //new int[] {2,4,6},
-        //new internal[] {-2,3,1}
-        //}
+//        [TestCaseSource("AddCases")]
+//        private static object[] AddCases = {
+//        new int[] {2,4,6},
+//        new internal[] {-2,3,1}
+//}
     }
 }
