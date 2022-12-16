@@ -7,3 +7,27 @@ internal class Program
         Console.WriteLine("Hello, World!");
     }
 }
+
+public class Person
+{
+    private string _firstName;
+    private string _lastName;
+    public int Age { get; set; } = 18;
+
+    public string FullName()
+    {
+        return _firstName + " " + _lastName;
+    }
+
+    public Person(string firstName, string lastName, int age)
+    {
+        _firstName = firstName;
+        _lastName = lastName;
+        Age = age;
+    }
+    public Person(string firstName, string lastName)
+    {
+        _firstName = firstName;
+        _lastName = lastName;
+    }
+}
