@@ -14,6 +14,19 @@ public class Person
     private string _lastName;
     public int Age { get; set; } = 18;
 
+    private int _height = 0;
+    public int Height 
+    { 
+        get
+        {
+            return _height;
+        }
+        set
+        {
+            if (value < 0) _height = value;
+        }
+    }
+
     public string FullName()
     {
         return _firstName + " " + _lastName;
