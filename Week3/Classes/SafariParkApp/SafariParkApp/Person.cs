@@ -40,7 +40,7 @@ public class Person : IMoveable
 
     public override string ToString()
     {
-        return $"{base.ToString()} {FirstName} {LastName}";
+        return $"{FullName()}, Person Object";
     }
 
     public string Move()

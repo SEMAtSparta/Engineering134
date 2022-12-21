@@ -6,84 +6,85 @@ internal class Program
     {
         //SpottingList list = new() { Hyena = true, Baboon = true };
 
-        Hunter h = new Hunter("Gary", "Kasparov", "Nikon FXD850"); //object initialisation has access to init
+        //Hunter h = new Hunter("Gary", "Kasparov", "Nikon FXD850"); //object initialisation has access to init
         //Console.WriteLine(h.Shoot());
         //Console.WriteLine(h);
 
-        Hyena hyena = new Hyena("Jeff");
+        //Hyena hyena = new Hyena("Jeff");
         //Console.WriteLine(hyena);
         //Console.WriteLine(hyena.Call());
 
-        List<IMoveable> safariObjects = new()
-        {
-            hyena,
-            h,
-            new Airplane(12, 100, "British Airways"){NumPassengers = 6 }
-        };
+        //List<IMoveable> safariObjects = new()
+        //{
+        //    hyena,
+        //    h,
+        //    new Airplane(12, 100, "British Airways"){NumPassengers = 6 }
+        //};
 
-        foreach(var obj in safariObjects)
-        {
-            if(obj is Person)
-            {
-                var person = (Person)obj;
-                Console.WriteLine(person.FirstName);
-            }
-            Console.WriteLine(obj.Move());
-        }
+        //foreach(var obj in safariObjects)
+        //{
+        //    if(obj is Person)
+        //    {
+        //        var person = (Person)obj;
+        //        Console.WriteLine(person.FirstName);
+        //    }
+        //    Console.WriteLine(obj.Move());
+        //}
 
-        IMoveable mover = h;
-    }
-}
+        //IMoveable mover = h;
 
-public class Person : IMoveable
-{
-    public string FirstName;
-    public string LastName;
-    //private readonly string _eyecolour;
-    public int Age { get; set; } = 18;
+        #region Comparison operators
+        //var bobOne = new Person("Bob", "Builder");
+        //var bobTwo = bobOne;
 
-    private int _height = 0;
-    public int Height 
-    { 
-        get
-        {
-            return _height;
-        }
-        set
-        {
-            if (value < 0) _height = value;
-        }
-    }
+        //Console.WriteLine(bobOne == bobTwo);
 
-    public string FullName()
-    {
-        return FirstName + " " + LastName;
-    }
+        //var cessna = new Airplane(5);
+        //var bushPlane = new Airplane(5);
+        //List<Airplane> listPlanes = new()
+        //{
+        //    new Airplane(5){Altitude = 2},
+        //    new Airplane(5){Altitude = 5},
+        //    new Airplane(5){Altitude = 1}
+        //};
 
-    public Person(string firstName, string lastName, int age)
-    {
-        FirstName = firstName;
-        LastName = lastName;
-        Age = age;
-    }
-    public Person(string firstName, string lastName)
-    {
-        FirstName = firstName;
-        LastName = lastName;
-    }
+        //listPlanes.Sort();
+        #endregion
 
-    public override string ToString()
-    {
-        return $"{base.ToString()} {FirstName} {LastName}";
-    }
+        #region Collections
+        #region Lists
+        //List<Person> personList = new()
+        //{
+        //    new Person("Gary", "Kasparov"),
+        //    new Person("Robert", "Fischer"),
+        //    new Person("Anatoly", "Karpov")
+        //};
 
-    public string Move()
-    {
-        return $"{FirstName} takes a leisurely stroll.";
-    }
+        //foreach (Person p in personList)
+        //{
+        //    Console.WriteLine(p);
+        //}
+        //Console.WriteLine(personList[0]);
 
-    public string Move(int times)
-    {
-        return $"{FirstName} briskly moves {times} times.";
+        //Person borisSpassky = new Person("Boris", "Spassky");
+        //personList.Add(new Person("Boris", "Spassky"));
+        //personList.Remove(new Person("Boris", "Spassky"));  // will not work as provided object must be equal to object present
+        //personList.Remove(borisSpassky);                    // this will work as it is exactly equal
+
+        //List<int> ints = new() { 5, 4, 3, 9, 0 };
+        //ints.Add(8);
+        //ints.Sort();
+        //ints.RemoveRange(1,2);
+        //ints.Insert(2,1);
+        //ints.Reverse();
+        //ints.Remove(9);
+        //foreach (int i in ints)
+        //{
+        //    Console.Write(i);
+        //}
+        //Console.WriteLine("");
+        #endregion
+
+        #endregion
     }
 }

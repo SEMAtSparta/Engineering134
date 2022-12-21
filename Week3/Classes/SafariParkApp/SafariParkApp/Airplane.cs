@@ -1,6 +1,6 @@
 ﻿namespace SafariParkApp;
 
-public class Airplane : Vehicle
+public class Airplane : Vehicle, IEquatable<Airplane?>, IComparable<Airplane>
 {
     private string _airline = "";
     private int _altitude = 0;
@@ -61,5 +61,50 @@ public class Airplane : Vehicle
     public override string ToString()
     {
         return $"Airplane flying with {_airline}";
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return Equals(obj as Airplane);
+    }
+
+    public bool Equals(Airplane? other)
+    {
+        return other is not null &&
+               NumPassengers == other.NumPassengers &&
+               Speed == other.Speed;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(NumPassengers, Speed);
+    }
+
+    public int CompareTo(Airplane? other)
+    {
+        if(other is null)
+        {
+            throw new ArgumentException($"Comparison between {this.ToString()} and an incompatible object.");
+        }
+
+        if (other.Altitude > this.Altitude)
+        {
+            return 1;
+        }
+        else if (other.Altitude == this.Altitude)
+        {
+            return 0;
+        }
+        else return -1;
+        
+    }
+
+    public static bool operator ==(Airplane left, Airplane right)
+    {
+        return EqualityComparer<Airplane>.Default.Equals(left, right);
+    }
+    public static bool operator !=(Airplane left, Airplane right)
+    {
+        return !(left == right);
     }
 }

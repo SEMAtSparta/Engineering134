@@ -1,6 +1,6 @@
 ﻿namespace SafariParkApp;
 
-public abstract class Vehicle : IMoveable
+public abstract class Vehicle : IMoveable, IEquatable<Vehicle?>
 {
     private int _capacity;
     private int _numPassengers;
@@ -46,5 +46,22 @@ public abstract class Vehicle : IMoveable
     {
         _capacity = capacity;
         Speed = speed;
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return Equals(obj as Vehicle);
+    }
+
+    public bool Equals(Vehicle? other)
+    {
+        return other is not null &&
+               _capacity == other._capacity &&
+               Speed == other.Speed;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(_capacity, Speed);
     }
 }
