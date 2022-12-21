@@ -34,7 +34,7 @@ next we made exceptions
 
 ## Week 3 Advent of Code
 
-Many on the course either failed the week 2 test, or were feeling uncomfortable in the C# basics regardless.
+Many on the course either did not pass the week 2 test, or were feeling uncomfortable in the C# basics regardless.
 As a result we took week 3 as a chance to catch everyone up to the same level. Those who were feeling 
 uncomfortable did a set of revision exercises, while everyone else did the first few days of [Advent of Code](https://adventofcode.com/2022).
 My Advent of Code solutions can be found on my [github](https://github.com/SEMAtSparta/AOC22).
@@ -43,7 +43,22 @@ My Advent of Code solutions can be found on my [github](https://github.com/SEMAt
 
 ### Advanced Testing
 
+### OOP
 
+I learned that (obj as OtherObj) attempts to treat obj as type OtherObj, if it can't then it 
+passes it as null.
+
+We also wrote overrides for the default class equality operators.
+
+Next we learned about generic C# Collections. 
+
+We covered Lists, which are iterable and accessible by index. We also briefly covered linked lists, which cannot be accessed by index, however they are extremely efficient for insertion, as they only require changing a single pointer to insert elements. The drawback of a linked list is that they are inefficient for accessing data in the middle of the list, as the whole collection must be iterated through.
+
+Next we covered queues, which are FIFO. They are also not accessible via index, but are stored as a linked list in order of addition to the queue. The first element can be removed and returned with Dequeue(), or merely returned with Peek().
+
+Stacks work basically the same as queues except they are LIFO.
+
+Finally we covered HashSets. HashSets are sets organised by hash numbers, which are pseudo-unique identifying values which prevent identical elements from being included in the set multiple times. The most common implementation of a HashSet is a dictionary, which is a hashset of key value pairs. Elements are accessible by a custom defined index.
 
 
 
