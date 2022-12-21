@@ -32,6 +32,18 @@ After the tutorial on Unit Tests I did the follow-up lab session, which is insid
 
 next we made exceptions
 
-## Week 3: OOP and Advanced Testing
+## Week 3 Advent of Code
+
+Many on the course either failed the week 2 test, or were feeling uncomfortable in the C# basics regardless.
+As a result we took week 3 as a chance to catch everyone up to the same level. Those who were feeling 
+uncomfortable did a set of revision exercises, while everyone else did the first few days of [Advent of Code](https://adventofcode.com/2022).
+My Advent of Code solutions can be found on my [github](https://github.com/SEMAtSparta/AOC22).
+
+## Week 4 Advanced Unit Testing and C# OOP
+
+### Advanced Testing
+
+
+
 
 
