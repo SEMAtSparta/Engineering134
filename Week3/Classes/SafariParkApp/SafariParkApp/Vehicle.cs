@@ -22,7 +22,7 @@ public abstract class Vehicle : IMoveable, IEquatable<Vehicle?>
     }
 
     public int Position { get; set; }
-    public int Speed { get; }
+    public int Speed { get; set; }
 
     public virtual string Move()
     {

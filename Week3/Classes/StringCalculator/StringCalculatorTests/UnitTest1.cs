@@ -3,7 +3,7 @@ namespace StringCalculatorTests;
 
 public class Tests
 {
-    [Ignore("No longer necessary")]
+    [Ignore("No longer fits requirements")]
     [Test]
     public void GivenEmptyString_Add_Returns0()
     {
@@ -11,7 +11,7 @@ public class Tests
         Assert.That(output, Is.EqualTo(0));
     }
 
-    [Ignore("No longer necessary")]
+    [Ignore("No longer fits requirements")]
     [TestCase("1", 1)]
     [TestCase("1,2", 3)]
     [TestCase("1,3,4", 8)]
@@ -23,7 +23,7 @@ public class Tests
         Assert.That(output, Is.EqualTo(expectedResult));
     }
 
-    [Ignore("No longer necessary")]
+    [Ignore("No longer fits requirements")]
     [TestCase("1\n2,3", 6)]
 
     public void GivenCommaAndNewlineSeparatedString_Add_ReturnsSumOfNumbers(string input, int expectedResult)
