@@ -18,10 +18,7 @@ namespace Collections_Lib
                 output += queue.Dequeue();
                 output += ", ";
             }
-            if(output.Length > 0)
-            {
-                output = output.Substring(0, output.Length - 2);
-            }
+            output = output.TrimEnd(',', ' ');
             return output;
         }
 
