@@ -1,0 +1,62 @@
+{
+  "white": {
+    "openings": [
+      {
+        "name": "English Opening",
+        "moves": [ "C4", "E4" ],
+        "notable players": [
+          "Yasser Seirawan"
+        ]
+      },
+      {
+        "name": "Scotch Game",
+        "moves": [ "E4", "E5", "NF3", "NF6", "D4" ],
+        "notable players": [
+          "Gary Kasparov"
+        ]
+      },
+      {
+        "name": "Ruy Lopez",
+        "moves": [ "E4", "E5", "NF3", "NC6", "BB5" ]
+        "notable players": [
+          "Bobby Fischer",
+          "Anatoly Karpov"
+        ]
+      }
+    ]
+  },
+  "black": {
+    "openings": [
+      {
+        "name": "French Defence",
+        "moves": [ "E4", "E6" ],
+        "notable players": [
+          "Vikttor Korchnoi",
+          "Hikaru Nakamura"
+        ],
+        "variations": [
+          {
+            "name": "Advance",
+            "moves": [ "D4", "D5", "E5" ]
+          },
+          {
+            "name": "Exchange",
+            "moves": [ "D4", "D5", "EXD5" ]
+          }
+        ]
+      },
+      {
+        "name": "Scandinavian Defence",
+        "moves": [ "E4", "D5" ]
+      },
+      {
+        "name": "Sicillian Defence",
+        "moves": [ "E4", "C5" ],
+        "notable players" [
+          "Bobby Fischer",
+          "Gary Kasparov"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+*{
+    margin:0px;
+    padding-left:0;
+
+    font-family: sans-serif
+}
+
+.centeredImage{
+    display: block;
+    margin-left: auto;
+    margin-bottom: 1%;
+    border-radius: 10%;
+}
+.caption{
+    text-align: right;
+}
+
+body{
+    padding-left: 5%;
+    padding-right: 5%;
+
+    background-color: lightpink;
+    color: black;
+}
+header, footer{
+    padding: 2%;
+    background-color: bisque;
+    color: black;
+}
+
+lists{
+    padding:1% 0%;
+}
+
+ol,ul{
+    padding-left:2%;
+    padding-right:5%;
+    padding-top:1%;
+    padding-bottom: 1%;
+
+}
+
+section{
+    padding-left: 2.5%;
+}
+
+.navElement{
+    display:inline-block;
+    margin-left: auto;
+    width: 100px;
+    height: 40px;
+    padding: 1% 1%;
+}
+
+nav{
+    display:flex;
+    margin-left:auto;
+    width: 20%;
+}

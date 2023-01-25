@@ -9,17 +9,14 @@ namespace ClassesApp
         private string _firstName;
         private string _lastName;
         private int _age;
-        private int _houseNo;
-        private string _street;
-        private string _town;
+        private Address _address;
+
         public Person() { }
-        public Person(string fName, string lName, int houseNo = 0, string street = "", string town = "")
+        public Person(string fName, string lName, Address address = null)
         {
             _firstName = fName;
             _lastName = lName;
-            _houseNo = houseNo;
-            _street = street;
-            _town = town;
+            _address = address;
         }
 
         public int Age
@@ -45,8 +42,14 @@ namespace ClassesApp
 
         public override string ToString()
         {
-            var addressString = $"Address: {_houseNo} {_street}, {_town}";
-            return $"{base.ToString()} Name: {_firstName}  { _lastName} Age: {Age}. {addressString}";
+            if(_address is not null)
+            {
+                return $"{base.ToString()} Name: {GetFullName()} Age: {Age}. {_address.ToString()}";
+            }
+            else
+            {
+                return $"{base.ToString()} Name: {GetFullName()} Age: {Age}.";
+            }
         }
     }
 }

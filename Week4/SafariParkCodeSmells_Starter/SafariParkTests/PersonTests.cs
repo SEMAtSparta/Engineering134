@@ -4,13 +4,12 @@ using ClassesApp;
 namespace ClassesTests
 {
    
-    public class BaseClassTests
+    public class PersonTests
     {
         [TestCase("Cathy", "French", "Cathy French") ]
         [TestCase("", "", " ")]
         public void GetFullNameTest(string fName, string lName, string expected)
         {
-            // create a new person
             var subject = new Person(fName, lName);
             var result = subject.GetFullName();
             Assert.AreEqual(expected, result);
@@ -27,10 +26,10 @@ namespace ClassesTests
         [Test]
         public void ToStringTest()
         {
-            var subject = new Person("Cathy", "French", 4, "High Street", "Stafford");
+            var subject = new Person("Cathy", "French", new Address(4, "High Street", "Stafford"));
             subject.Age = 22;
             var result = subject.ToString();
-            Assert.AreEqual("ClassesApp.Person Name: Cathy  French Age: 22. Address: 4 High Street, Stafford", result);
+            Assert.AreEqual("ClassesApp.Person Name: Cathy French Age: 22. Address: 4 High Street, Stafford", result);
         }
     }
 }
