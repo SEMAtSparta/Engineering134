@@ -1,4 +1,4 @@
-namespace SL_POM_Framework
+namespace CalculatorBDD_Demo
 {
     public class Tests
     {
